@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 0.94rem;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+}
+p {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+}
+h3 {
+  margin-left: 5px;
+  font-size: 0.9rem;
+  font-weight: lighter;
+  letter-spacing: 0.5px;
+}
+#root {
+  width: 80svw;
+  min-height: 100svh;
+  margin: 0 auto;
+  background-color: #191919;
+  color: #d4d4d4;
+
+  /*white
+    background-color: #FFFFFF; 
+    color: #373530;
+    */
+}
+
+.space {
+  margin-bottom: 12px;
+}
+
+.Error {
+  color: red;
+}
+.Success {
+  color: green;
+}
+.border {
+  border: 2px solid #2f2f2f;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+button {
+  background-color: #191919;
+  color: #d4d4d4;
+  width: 60px;
+  height: 10px;
+  margin: 12px 0;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.output {
+  margin-top: 10px;
+  min-width: 99%;
+  max-width: 100%;
+  min-height: 80px;
+  max-height: fit-content;
+  overflow: scroll;
+  background-color: #191919;
+  color: #d4d4d4;
+  scrollbar-width: thin;
+  white-space: pre-wrap;
+}
+
+.relative {
+  position: relative;
+}
+
+.copyButton {
+  position: absolute;
+  top: -80px;
+  bottom: 0px;
+  right: 10px;
+  opacity: 0.6;
+}
+.flex {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+}
+.flexDirCol {
+  flex-direction: column;
+}
+.flexDirRow {
+  flex-direction: row;
+}
+.flexEnd {
+  justify-content: flex-end;
+}
+.code-editor {
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 12px;
+  background-color: rgb(32, 33, 42);
+  color: rgb(194, 201, 240);
+  min-height: 100px;
+}
+
+.code-editor .keyword {
+  color: #569cd6; /* Blue for keywords */
+  font-weight: bold;
+}
+
+.code-editor .string {
+  color: rgb(160, 200, 100); /* Brownish for strings */
+}
+
+.code-editor .number {
+  color: #b5cea8; /* Green for numbers */
+}
+.code-editor .operator {
+  color: rgb(96, 85, 130);
+}

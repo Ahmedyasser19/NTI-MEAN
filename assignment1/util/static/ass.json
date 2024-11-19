@@ -1,0 +1,67 @@
+[
+  {
+    "id": "1",
+    "text": "1. Write a program that takes an integer input (0–100).",
+    "answer": "function takeInput() {\n  const userInput = prompt(\"Enter an integer between 0 and 100:\");\n\n  const number = Number(userInput);\n\n  if (isNaN(number) || number < 0 || number > 100) {\n    return \"Invalid input. Please enter a number between 0 and 100.\";\n  } else {\n    return `You Entered ${number}`;\n  }\n}\n\ntakeInput();"
+  },
+  {
+    "id": "2",
+    "text": "2. Use `if-else` to assign grades based on the following criteria:\n    - 90–100: A\n    - 80–89: B\n    - 70–79: C\n    - 60–69: D\n    - Below 60: F",
+    "answer": "function takeInput() {\n  const userInput = prompt(\"Enter your mark\");\n\n  const number = Number(userInput);\n\n  if (isNaN(number) || number < 0 || number > 100) {\n    return \"Invalid input. Please enter a number between 0 and 100.\";\n  } else {\n    if (number <= 100 && number >= 90) {\n      return \"Grade: A\";\n    } else if (number <= 89 && number >= 80) {\n      return \"Grade: B\";\n    } else if (number <= 70 && number >= 79) {\n      return \"Grade: C\";\n    } else if (number <= 60 && number >= 69) {\n      return \"Grade: D\";\n    } else {\n      return \"Grade: F\";\n    }\n  }\n}\n\ntakeInput();\n"
+  },
+  {
+    "id": "3",
+    "text": "3. Write the same logic using a `switch` statement.\n\n    You cannot use `break` in the `switch` statement; instead, use a workaround.",
+    "answer": "function takeInput() {\n  const userInput = prompt(\"Enter your mark\");\n  const number = Number(userInput);\n\n  if (isNaN(number) || number < 0 || number > 100) {\n    return \"Invalid input. Please enter a number between 0 and 100.\";\n  }\n\n  switch (true) {\n    case number >= 90:\n      return \"Grade: A\";\n    case number >= 80:\n      return \"Grade: B\";\n    case number >= 70:\n      return \"Grade: C\";\n    case number >= 60:\n      return \"Grade: D\";\n    case number < 60:\n      return \"Grade: F\";\n  }\n}\n\ntakeInput();\n\n"
+  },
+  {
+    "id": "4",
+    "text": "4. Write a program that generates the following pattern using a for loop:\n1\n22\n333\n4444\n55555\n\nWrite the same program using a while loop and then again with a do-while loop.",
+    "answer": "function answ() {\n  //////////\n  //change the code below here\n  let result = \"\";\n  for (let i = 1; i <= 5; i++) {\n    result += `${i.toString().repeat(i)}\\n`;\n  }\n  return result.trim(); \n  //////////\n}\n//////////\n// let result = \"\";\n// let i = 1;\n// while (i <= 5) {\n//   result += `${i.toString().repeat(i)}\\n`;\n//   i++;\n// }\n// return result.trim(); \n//////////\n// let result = \"\";\n// let i = 1;\n// do {\n//   result += `${i.toString().repeat(i)}\\n`;\n//   i++;\n// } while (i <= 5);\n// return result.trim(); \n\nansw();\n\n\n\n"
+  },
+  {
+    "id": "5",
+    "text": "5. You are given three variables `x`, `y`, and `z`.\n\n1. Write a program that checks if at least two variables have the same value and logs a message indicating the match.\n2. Use only **logical operators** (`&&`, `||`, `!`) and **comparison operators**. Avoid using `if` or `switch`.\n\nExample:\n\nFor `x = 5`, `y = 5`, `z = 3`, the output should be:\n\n`\"x and y are equal\"`",
+    "answer": "function checkMatches() {\n  const x = Number(prompt(\"Enter the value for x:\"));\n  const y = Number(prompt(\"Enter the value for y:\"));\n  const z = Number(prompt(\"Enter the value for z:\"));\n\n  return (\n    (x === y && x === z && \"x, y, and z are equal\") || \n    (x === y && \"x and y are equal\") || \n    (x === z && \"x and z are equal\") || \n    (y === z && \"y and z are equal\") || \n    \"No values are equal\"\n  );\n}\n\ncheckMatches();\n"
+  },
+  {
+    "id": "6",
+    "text": "6. Create a variable `score` and set it to 50.\n1. Use compound assignment operators (`+=`, `-=`, `*=`, `/=`) to:\n    - Add 10 to the score.\n    - Subtract 5 from the score.\n    - Double the score.\n    - Divide the score by 5.\n2. Log the result after each operation.",
+    "answer": "function updateScore() {\n  let score = 50;\n\n  score += 10;\n  const afterAddition = score;\n\n  score -= 5;\n  const afterSubtraction = score;\n\n  score *= 2;\n  const afterMultiplication = score;\n\n  score /= 5;\n  const afterDivision = score;\n\n  return {\n    afterAddition,\n    afterSubtraction,\n    afterMultiplication,\n    afterDivision,\n  };\n}\n\nfunction answer() {\n  const {\n    afterAddition,\n    afterSubtraction,\n    afterMultiplication,\n    afterDivision,\n  } = updateScore();\n\n  return `After add ${afterAddition}, after subtract ${afterSubtraction}, after multiply ${afterMultiplication}, after divide ${afterDivision}.`;\n}\n\nanswer();\n\n£¢"
+  },
+  {
+    "id": "7",
+    "text": "7. Write a program that calculates the ticket price for a theme park:\n- If age is below 5: \"Free entry.\"\n- If age is between 5 and 12: $10.\n- If age is between 13 and 60: $20.\n- If age is above 60: $15.\n\nUse nested `if-else` statements, and also include checks for invalid input (negative numbers or non-numeric values).",
+    "answer": "function calculateTicketPrice() {\n  const ageInput = prompt(\"Enter your age:\");\n  const age = Number(ageInput);\n\n  // Validate input\n  if (isNaN(age) || age < 0) {\n    return \"Invalid input. Please enter a valid age.\";\n  }\n\n  // Calculate ticket price using nested if-else\n  if (age < 5) {\n    return \"Free entry.\";\n  } else if (age >= 5 && age <= 12) {\n    return \"$10.\";\n  } else if (age >= 13 && age <= 60) {\n    return \"$20.\";\n  } else {\n    return \"$15.\";\n  }\n}\n\n// Call the function and log the result\ncalculateTicketPrice();\n\n"
+  },
+  {
+    "id": "8",
+    "text": "8. Write a program that calculates the ticket price for a theme park:\n- If age is below 5: \"Free entry.\"\n- If age is between 5 and 12: $10.\n- If age is between 13 and 60: $20.\n- If age is above 60: $15.\n\n**Challenge:**\n\nUse nested `if-else` statements, and also include checks for invalid input (negative numbers or non-numeric values).",
+    "answer": "Repeted question"
+  },
+  {
+    "id": "9",
+    "text": "9. Write a program that checks if a given year is a leap year. Use the following conditions:\n- A year is a leap year if it is divisible by 4.\n- It is not a leap year if it is divisible by 100 but not divisible by 400.",
+    "answer": "function isLeapYear() {\n  const userInput = prompt(\"Enter your mark\");\n  const number = Number(userInput);\n\n  if (isNaN(number) || number < 0 || number > 10000) {\n    return \"Invalid input. Please enter a number between 0 and 100.\";\n  }else\n  if (number % 4 === 0) {\n    if (number % 100 === 0) {\n      if (number % 400 === 0) {\n        return true;\n      } else {\n        return false;\n      }\n    } else {\n      return true;\n    }\n  } else {\n    return false;\n  }\n}\n\nisLeapYear()\n\n"
+  },
+  {
+    "id": "10",
+    "text": "10. Write a program that prints the multiplication table of a number (1–10).\n\nInstead of hardcoding the number, use a variable `n` to allow dynamic input. Write the solution using both a `for` loop and a `while` loop.",
+    "answer": "function multiplicationTable() {\n  const userInput = prompt(\"Enter your mark\");\n\n  const number = Number(userInput);\n\n  if (isNaN(number) || number < 0 || number > 100) {\n    return \"Invalid input. Please enter a number between 0 and 100.\";\n  } else {\n    let result = [];\n    for (let i = 1; i <= 10; i++) {\n      result.push(`${number} x ${i} = ${number * i}\\n`);\n    }\n    return result;\n  }\n}\n\nmultiplicationTable()\n\n\n"
+  },
+  {
+    "id": "11",
+    "text": "11. Write a program to find and print all prime numbers between 1 and 50.\n\nUse nested loops.",
+    "answer": "function printPrimes() {\n  let answer = new Set(); \n  for (let num = 2; num <= 50; num++) {\n    let isPrime = true;\n    for (let divisor = 2; divisor < num; divisor++) {\n      if (num % divisor === 0) {\n        isPrime = false;\n        break;\n      }\n    }\n    if (isPrime) {\n      answer.add(num); \n    }\n  }\n  return [...answer]; \n}\n\nprintPrimes();\n\n\n"
+  },
+  {
+    "id": "12",
+    "text": "12. Write a program that prints the following pattern using a loop:\n*****\n****\n***\n**\n*",
+    "answer": "function printPattern() {\n  let pattern = \"\"; // Initialize an empty string\n  for (let i = 5; i > 0; i--) {\n    pattern += \"*\".repeat(i) + \"\\n\"; // Add i stars and a newline character\n  }\n  return pattern;\n}\n\nprintPattern();\n\n\n"
+  },
+  {
+    "id": "13",
+    "text": "13. Write a program that prints numbers from 1 to 50 with the following rules:\n- If a number is divisible by 3, print \"Fizz.\"\n- If divisible by 5, print \"Buzz.\"\n- If divisible by both 3 and 5, print \"FizzBuzz.\"\n- Otherwise, print the number.\n\n**Challenge:**\n\nRewrite the program using a single `for` loop without using `if-else`.",
+    "answer": "function printNumbers() {\n  let answer = [];\n  for (let i = 1; i <= 50; i++) {\n    switch (true) {\n      case i % 3 === 0 && i % 5 === 0: // Boolean condition\n        answer.push(\"FizzBuzz\");\n        break;\n      case i % 3 === 0: // Boolean condition\n        answer.push(\"Fizz\");\n        break;\n      case i % 5 === 0: // Boolean condition\n        answer.push(\"Buzz\");\n        break;\n      default:\n        answer.push(i);\n        break;\n    }\n  }\n  return answer;\n}\n\nprintNumbers()"
+  }
+]
